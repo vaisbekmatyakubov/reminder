@@ -7,7 +7,7 @@ import pytz
 
 # Настройки бота
 BOT_TOKEN = '7792591272:AAEEgPZHTuUlnSLEnYp7sDSPLxdVWCtIwcc'
-CHAT_ID = '-1002346016617'
+CHAT_ID = '-1002047052809'
 
 # Инициализация бота
 bot = Bot(token=BOT_TOKEN)
@@ -31,7 +31,7 @@ def schedule_message():
     tashkent_tz = pytz.timezone('Asia/Tashkent')
 
     # Планируем отправку каждый день в 16:57 по Ташкентскому времени
-    schedule.every().day.at("17:43").do(run_async_task).tag('daily_message')
+    schedule.every().day.at("18:00").do(run_async_task).tag('daily_message')
 
 # Основной цикл
 def main():
