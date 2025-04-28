@@ -15,7 +15,7 @@ bot = Bot(token=BOT_TOKEN)
 # Функция отправки сообщения
 async def send_message():
     try:
-        await bot.send_message(chat_id=CHAT_ID, text='Прошу предоставить ежедневный отчет о проделанной работе. https://docs.google.com/spreadsheets/d/1sg9iaJn9u0eustTZARVDGbsQEBgbvy2b5ZofFS_ATVM/edit?usp=sharing')
+        await bot.send_message(chat_id=CHAT_ID, text='Прошу предоставить ежедневный отчет о проделанной работе:\nhttps://docs.google.com/spreadsheets/d/1sg9iaJn9u0eustTZARVDGbsQEBgbvy2b5ZofFS_ATVM/edit?usp=sharing')
         print(f"Сообщение успешно отправлено в {datetime.now(pytz.timezone('Asia/Tashkent'))}")
     except Exception as e:
         print(f"Ошибка при отправке сообщения: {e}")
@@ -31,7 +31,7 @@ def schedule_message():
     tashkent_tz = pytz.timezone('Asia/Tashkent')
 
     # Планируем отправку каждый день в 16:57 по Ташкентскому времени
-    schedule.every().day.at("17:10").do(run_async_task).tag('daily_message')
+    schedule.every().day.at("17:43").do(run_async_task).tag('daily_message')
 
 # Основной цикл
 def main():
